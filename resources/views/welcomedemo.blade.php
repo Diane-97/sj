@@ -251,7 +251,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="card-body">
                         <div class="post">
                             <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="assets/dist/img/user.png" alt="user image">
+                                <img class="img-circle img-bordered-sm" src="/assets/dist/img/user.png" alt="user image">
                                 <span class="username">
                                     <a href="#">user name</a>
                               </span>
@@ -314,6 +314,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script>
 		var ckview = document.getElementById("ckview");
 		CKEDITOR.replace(ckview,{
+			language:'en-gb',
+			filebrowserBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+			filebrowserUploadUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+			filebrowserImageBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
+		});
+
+        var ckview = document.getElementById("ckview1");
+		CKEDITOR.replace(ckview1,{
 			language:'en-gb',
 			filebrowserBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
 			filebrowserUploadUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',

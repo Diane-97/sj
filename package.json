@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-decoupled-document": "^22.0.0",
         "@fortawesome/fontawesome-free": "^5.14.0",
         "admin-lte": "^3.0.5"
     }
