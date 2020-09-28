@@ -65,9 +65,7 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        $answers = DB::select('select * from answers where question_id = ?', [$id]);
-        $countAswer = count($answers);
-        return view('welcomedemo',compact('countAswer'));
+        
     }
 
     /**
