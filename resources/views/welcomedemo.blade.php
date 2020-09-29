@@ -249,19 +249,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <h2 class="card-title text-primary font-weight-bold">Popular Questions</h2>
                     </div>
                     <div class="card-body">
+                        @foreach ($popularQuestions as $popularQuestion)
                         <div class="post">
-                            <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="/assets/dist/img/user.png" alt="user image">
-                                <span class="username">
-                                    <a href="#">user name</a>
-                              </span>
-                                <span class="description">Shared date</span>
-                            </div>
                             <!-- /.user-block -->
-                            <p>
-                                Question one
-                            </p>
+                               @php
+                                   echo $popularQuestion->statement
+                               @endphp
+                          
                         </div>
+                        @endforeach
+                        
                     </div>
                 </div>
                 <!--                    End of popular Question Card-->

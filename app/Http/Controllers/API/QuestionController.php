@@ -28,8 +28,14 @@ class QuestionController extends Controller
         $question = Question::all();
         $answer = DB::select('select * from answers where question_id = ?',[2]);
         $countAswer = count($answer);
+        $popularQuestions = DB::table('questions')
+        ->select('statement',DB::raw('COUNT(statement) AS occurrences'))
+        ->groupBy('statement')
+        ->orderBy('occurrences','DESC')
+        ->limit(10)
+        ->get();
         
-        return view('welcomedemo',compact('questions','users','answers','countAswer'))
+        return view('welcomedemo',compact('questions','users','answers','countAswer','popularQuestions'))
 
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
