@@ -264,7 +264,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- input field to get user id -->
                     <input  name="userId" value="{{Auth::user()->id}}" style="display:none">
                 
-                    <textarea class="form-control textarea ckeditor" name="statement" placeholder="Answer"
+                    <textarea class="form-control textarea ckeditor" name="statement" id="ckview" placeholder="Answer"
                 style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                     </div>
 
@@ -367,7 +367,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 <!-- End of modal -->
-{{-- eeeeeeeeeeeeeeeeeeeeeeeeeeeee --}}
                 </div>
                 </div>
             </div>

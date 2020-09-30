@@ -210,25 +210,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       
                             //create model id used on popup model
                             $id =  "collapseId".$idq ;
+                            $ckview = "ckviewid".$idq;
                             $numberOfAnswer = $countAswer;
-                            
-                            
                             @endphp
-
-                            {{-- //get the number of answer to specific question --}}
-                            @foreach ($answers as $answer) 
-                              
-
-                            @endforeach
-
 
                     </div>
                     </div>
                            <!-- textbox used to answer question-->
 
                           @include('inc.answerTxarea')
+                          
                             
                         </div>
+
+
+                {{-- sript for adding ckeditor to the textare --}}
+                <script>
+                    var id = "<?php echo $ckview; ?>"
+                    var ckview = document.getElementById(id);
+                    CKEDITOR.replace(ckview,{
+                        language:'en-gb',
+                        filebrowserBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+			            filebrowserUploadUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+			            filebrowserImageBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
+                    });
+            </script>
                         @endforeach
                         {!! $questions->links() !!}
                     </div>
@@ -303,7 +309,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/js/bootstrap.js"></script>
 
 <script>
-		var ckview = document.getElementById("ckview");
+		var ckview = document.getElementById("ckview1");
 		CKEDITOR.replace(ckview,{
 			language:'en-gb',
 			filebrowserBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
@@ -311,13 +317,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			filebrowserImageBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
 		});
 
-        var ckview = document.getElementById("ckview1");
-		CKEDITOR.replace(ckview1,{
-			language:'en-gb',
-			filebrowserBrowseUrl : 'ckeditor/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
-			filebrowserUploadUrl : 'ckeditor/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
-			filebrowserImageBrowseUrl : 'ckeditor/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
-		});
+       
 </script>
 
 </body>
