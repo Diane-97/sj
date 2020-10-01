@@ -88,7 +88,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="btn btn-primary btn-sm" href="{{ route('register') }}">Register</a>
+                            <a class="btn btn-primary btn-sm ml-3" href="{{ route('register') }}">Register</a>
                         </li>  
                         @endif
                     @endauth
@@ -105,7 +105,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="container-fluid">
         <div class="discy-container the-main-container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" style="background:url('{{asset('img/back.jpeg')}}');">
                     <div class="call-action-wrap">
                         <div class="col-12">
 
@@ -113,13 +113,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="w-50 h-25">
 
-                                <p class="font-weight-normal font-weight-light">
+                                <p class="font-weight-normal font-weight-bold text-white" style="font-size:25px;">
                                     We want to connect the people who have knowledge to the people who need it, to bring together people with different perspectives so they can understand each other better, and to empower everyone to share their knowledge.
                                 </p>
                             </div>
 
                         </div>
-                        <a class="btn btn-success btn-sm float-right mb-5" href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
+                        <a class="btn btn-success float-right mb-5" href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
 
                     </div>
                 </div>
@@ -130,7 +130,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="container-fluid">
+    <div class="container-fluid mt-2">
         <div class="row">
 
             <!--           Starting of Left card-->
@@ -149,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                             <!-- /.user-block -->
                             <p>
-                                exam
+                                
                             </p>
                         </div>
                     </div>
@@ -161,14 +161,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     <div class="card-body">
                         <div class="post">
-                            <ul>
-                                <li>
-                                    <p>
-                                        Link
-                                    </p>
-                                </li>
-                            </ul>
-
+                        <p></p>
+                            
                         </div>
                     </div>
                 </div>
@@ -216,25 +210,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       
                             //create model id used on popup model
                             $id =  "collapseId".$idq ;
+                            $ckview = "ckviewid".$idq;
                             $numberOfAnswer = $countAswer;
-                            
-                            
                             @endphp
-
-                            {{-- //get the number of answer to specific question --}}
-                            @foreach ($answers as $answer) 
-                              
-
-                            @endforeach
-
 
                     </div>
                     </div>
                            <!-- textbox used to answer question-->
 
                           @include('inc.answerTxarea')
+                          
                             
                         </div>
+
+
+                {{-- sript for adding ckeditor to the textare --}}
+                <script>
+                    var id = "<?php echo $ckview; ?>"
+                    var ckview = document.getElementById(id);
+                    CKEDITOR.replace(ckview,{
+                        language:'en-gb',
+                        filebrowserBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+			            filebrowserUploadUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+			            filebrowserImageBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
+                    });
+            </script>
                         @endforeach
                         {!! $questions->links() !!}
                     </div>
@@ -309,7 +309,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/js/bootstrap.js"></script>
 
 <script>
-		var ckview = document.getElementById("ckview");
+		var ckview = document.getElementById("ckview1");
 		CKEDITOR.replace(ckview,{
 			language:'en-gb',
 			filebrowserBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
@@ -317,13 +317,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			filebrowserImageBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
 		});
 
-        var ckview = document.getElementById("ckview1");
-		CKEDITOR.replace(ckview1,{
-			language:'en-gb',
-			filebrowserBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
-			filebrowserUploadUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
-			filebrowserImageBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
-		});
+       
 </script>
 
 </body>
