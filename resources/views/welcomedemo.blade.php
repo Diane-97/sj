@@ -60,7 +60,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
 
             <!-- Right navbar links -->
-            
+
                 @if (Route::has('login'))
                 <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
                     @auth
@@ -70,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                
+
                                 <a  class="dropdown-item" href="#" class="btn btn-default btn-flat btn-sm">Profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -89,15 +89,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="btn btn-primary btn-sm ml-3" href="{{ route('register') }}">Register</a>
-                        </li>  
+                        </li>
                         @endif
                     @endauth
                 </ul>
             @endif
 
-               
-               
-            
+
+
+
 
         </div>
     </nav>
@@ -105,7 +105,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="container-fluid">
         <div class="discy-container the-main-container">
             <div class="row">
-                <div class="col-12" style="background:url('{{asset('img/back.jpeg')}}');">
+                <div class="col-12" style="background:url('{{asset('img/backd.jpeg')}}');">
                     <div class="call-action-wrap">
                         <div class="col-12">
 
@@ -149,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                             <!-- /.user-block -->
                             <p>
-                                
+
                             </p>
                         </div>
                     </div>
@@ -162,7 +162,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="card-body">
                         <div class="post">
                         <p></p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -185,29 +185,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @foreach($questions as $question)
                         <div class="post">
 
-                            
+
                            <!--geting of  user name-->
-                        
+
                              <?php $userName = $users->find($question->user_id) ?>
-                        
-                        
+
+
                     <div class="media">
                             <img src="assets/dist/img/user.png" class="align-self-start mr-3" style="width:60px">
-                              
+
                             <div class="media-body">
                             <span class="username"><a href="#">Asked by:  </a><?php echo $userName->name ?></span><br>
                             <span class="description"><a href="#">Asked at:  </a>{{$question->created_at}}</span>
                                 <hr>
                             <!-- /.user-block -->
-                            
+
                             @php
                             //output question statement
                                echo $question->statement;
-                
-                            //get questin-id and user-id 
+
+                            //get questin-id and user-id
                             $idq =$question->id;
 
-                      
+
                             //create model id used on popup model
                             $id =  "collapseId".$idq ;
                             $ckview = "ckviewid".$idq;
@@ -219,8 +219,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                            <!-- textbox used to answer question-->
 
                           @include('inc.answerTxarea')
-                          
-                            
+
+
                         </div>
 
 
@@ -255,10 +255,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                @php
                                    echo $popularQuestion->statement
                                @endphp
-                          
+
                         </div>
                         @endforeach
-                        
+
                     </div>
                 </div>
                 <!--                    End of popular Question Card-->
@@ -317,7 +317,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			filebrowserImageBrowseUrl : '{{url("ckeditor")}}/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
 		});
 
-       
+
 </script>
 
 </body>
