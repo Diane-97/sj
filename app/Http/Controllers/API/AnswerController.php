@@ -60,7 +60,7 @@ class AnswerController extends Controller
         ->select('statement',DB::raw('COUNT(statement) AS occurrences'))
         ->groupBy('statement')
         ->orderBy('occurrences','DESC')
-        ->limit(10)
+        ->limit(5)
         ->get();
        return view('viewanswerpage',compact('question','answers','users','countAswer','popularQuestions'));
     }

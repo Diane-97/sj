@@ -32,7 +32,7 @@ class QuestionController extends Controller
         ->select('statement',DB::raw('COUNT(statement) AS occurrences'))
         ->groupBy('statement')
         ->orderBy('occurrences','DESC')
-        ->limit(10)
+        ->limit(5)
         ->get();
         
         return view('welcomedemo',compact('questions','users','answers','countAswer','popularQuestions'))
