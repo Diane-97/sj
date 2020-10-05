@@ -24,3 +24,4 @@ Route::resource('/answers',API\AnswerController::class);
 Auth::routes();
 
 Route::get('/home', 'API\QuestionController@index')->name('home');
+Route::get('about','API\aboutusController@index')->name('about');
