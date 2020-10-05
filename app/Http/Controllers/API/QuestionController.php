@@ -35,7 +35,7 @@ class QuestionController extends Controller
         ->limit(10)
         ->get();
 
-        return view('welcomedemo',compact('questions','users','answers','countAswer','popularQuestions'))
+        return view('welcome',compact('questions','users','answers','countAswer','popularQuestions'))
 
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
