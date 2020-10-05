@@ -42,6 +42,7 @@
                             <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
                             <div class="col-md-6">
                             <select class="form-control  @error('role') is-invalid @enderror" id="role"  name="role">
+                                <option>{{'User role'}}</option>
                                 <option value="Student">{{'Student'}}</option>
                                 <option value="Teacher">{{'Teacher'}}</option>
                                 <option value="Other">{{'Other'}}</option>

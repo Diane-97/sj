@@ -35,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
+                        <a href="{{route('home')}}" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('about')}}" class="nav-link">About Us</a>
@@ -105,7 +105,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="container-fluid">
         <div class="discy-container the-main-container">
             <div class="row">
-                <div class="col-12" style="background:url('{{asset('img/backd.jpeg')}}');">
+                <div class="col-12" style="background:url('{{asset('img/bakd.jpeg')}}');">
                     <div class="call-action-wrap">
                         <div class="col-12">
 
@@ -131,6 +131,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Content Wrapper. Contains page content -->
     <div class="container-fluid mt-2">
+
         <div class="row">
 
             <!--           Starting of Left card-->
@@ -244,6 +245,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!--            Right Card-->
             <div class="col-sm-3">
+                {{--        Total number of users--}}
+
+                <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="fas fa-users"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text text-bold">USERS</span>
+                        <span class="info-box-number text-bold">{{ \App\User::all()->count() }}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+
+                {{--        Ending to count total number of users--}}
                 <div class="card">
                     <div class="card-header">
                         <h2 class="card-title text-primary font-weight-bold">Popular Questions</h2>
@@ -268,12 +282,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="card-header">
                         <h2 class="card-title text-primary font-weight-bold">Advertisements</h2>
                     </div>
+
                     <div class="card-body">
                         <div class="post">
                             <ul>
                                 <li>
                                     <p>
-                                        Link
+                                        ads
                                     </p>
                                 </li>
                             </ul>
