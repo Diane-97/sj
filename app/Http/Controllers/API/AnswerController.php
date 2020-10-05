@@ -56,7 +56,13 @@ class AnswerController extends Controller
        $users = User::all();
        $answers = DB::select('select * from answers where question_id = ?', [$id]);
         $countAswer = count($answers);
-       return view('viewanswerpage',compact('question','answers','users','countAswer'));
+        $popularQuestions = DB::table('questions')
+        ->select('statement',DB::raw('COUNT(statement) AS occurrences'))
+        ->groupBy('statement')
+        ->orderBy('occurrences','DESC')
+        ->limit(10)
+        ->get();
+       return view('viewanswerpage',compact('question','answers','users','countAswer','popularQuestions'));
     }
 
     /**

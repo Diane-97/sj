@@ -60,7 +60,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
 
             <!-- Right navbar links -->
-            
+
                 @if (Route::has('login'))
                 <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
                     @auth
@@ -70,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                
+
                                 <a  class="dropdown-item" href="#" class="btn btn-default btn-flat btn-sm">Profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -88,38 +88,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="btn btn-primary btn-sm" href="{{ route('register') }}">Register</a>
-                        </li>  
+                            <a class="btn btn-primary btn-sm ml-3" href="{{ route('register') }}">Register</a>
+                        </li>
                         @endif
                     @endauth
                 </ul>
             @endif
 
-               
-               
-            
+
+
+
 
         </div>
     </nav>
     <!-- /.navbar -->
     <div class="container-fluid">
         <div class="discy-container the-main-container">
-            <div class="row">
-                <div class="col-12">
+            <div class="row" >
+                <div class="col-12" style="background:url('{{asset('img/bakd.jpeg')}}');">
                     <div class="call-action-wrap">
-                        <div class="col-12">
+                        <div class="col-12" >
 
                             <h1 class="font-weight-bold text-primary">SWALI &amp; JIBU SYSTEM</h1>
 
                             <div class="w-50 h-25">
 
-                                <p class="font-weight-normal font-weight-light">
+                                <p class="font-weight-normal font-weight-bold text-white" style="font-size:25px;">
                                     We want to connect the people who have knowledge to the people who need it, to bring together people with different perspectives so they can understand each other better, and to empower everyone to share their knowledge.
                                 </p>
                             </div>
 
                         </div>
-                        <a class="btn btn-success btn-sm float-right mb-5" href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
+                        <a class="btn btn-success float-right mb-5" href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
 
                     </div>
                 </div>
@@ -130,7 +130,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="container-fluid">
+    <div class="container-fluid mt-2">
         <div class="row">
 
             <!--           Starting of Left card-->
@@ -149,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                             <!-- /.user-block -->
                             <p>
-                                exam
+
                             </p>
                         </div>
                     </div>
@@ -161,13 +161,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     <div class="card-body">
                         <div class="post">
-                            <ul>
-                                <li>
-                                    <p>
-                                        Link
-                                    </p>
-                                </li>
-                            </ul>
+
+                                    <p></p>
 
                         </div>
                     </div>
@@ -188,7 +183,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     </div>
                     <div class="card-body">
-           
+
                         <!-- display spacific question and user who ask question -->
                         <h4>QUESTION:</h4>
                         <hr>
@@ -196,11 +191,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="box-body" style="font-size:50px">
                                 <?php echo $question->statement ?>
                                 @php
-                                 //get questin-id  
+                                 //get questin-id
                                 $idq = $question->id;
 
                                 //create model id used on popup model
-                                $id =  "collapseId".$idq ;   
+                                $id =  "collapseId".$idq ;
                                 @endphp
                             </div>
                             <div class="user-block">
@@ -218,44 +213,44 @@ scratch. This page gets rid of all links and provides the needed markup only.
                          <!-- display answer of question and user who give answer -->
                         @foreach($answers as $answer)
                         <div class="post">
-     
+
                            <!--geting of  user name-->
-                        
+
                              <?php $userName = $users->find($answer->user_id) ?>
-                        
-                        
+
+
 
                             <div class="user-block">
                                 <img class="img-circle img-bordered-sm" src="/assets/dist/img/user.png" alt="user image">
                                 <span class="username">
-                                   
+
                           <a href="#"><?php echo $userName->name ?></a>
                                 </span>
                                 <span class="description">{{$answer->created_at}}</span>
                             </div>
                             <!-- /.user-block -->
-                            
+
                             @php
                             //output question statement
                                echo $answer->statement;
-                
-                          
+
+
 
                             @endphp
-                            
+
                         </div>
                         @endforeach
 
                          <!-- textbox used to answer question-->
 
-                        
-                    
+
+
 {{-- aaaasssssssssssssssssss --}}
 
 <!-- textarea of answer -->
 
 @if (Route::has('login'))
-            
+
 <!-- start of modal if user login -->
     @auth
     <div class="collapse multi-collapse" id="<?php echo $id ?>">
@@ -268,8 +263,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <!-- input field to get user id -->
                     <input  name="userId" value="{{Auth::user()->id}}" style="display:none">
-                
-                    <textarea class="form-control textarea ckeditor" name="statement" placeholder="Answer"
+
+                    <textarea class="form-control textarea ckeditor" name="statement" id="ckview" placeholder="Answer"
                 style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                     </div>
 
@@ -279,18 +274,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
             </form>
         </div>
-       
+
     </div>
        <p>
         <span data-toggle="tooltip" title="3 Number of answers" class="badge bg-success">{{$question->id}}</span>
        <span> <button class="btn btn-success btn-sm" type="submit" data-toggle="collapse" data-target="#<?php echo $id ?>" aria-expanded="false" aria-controls="<?php echo $id ?>"><i class="fas fa-reply pr-1"></i>answer question</button></span>
         </p>
-    
+
     <!-- End of modal body if user login -->
 
-   
+
         @else
-<!-- start of modal  if user not login --> 
+<!-- start of modal  if user not login -->
 <div class="modal fade" id="<?php echo $id ?>" tabindex="-1" aria-labelledby="askquestion" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
 <div class="modal-content">
@@ -372,7 +367,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 <!-- End of modal -->
-{{-- eeeeeeeeeeeeeeeeeeeeeeeeeeeee --}}
                 </div>
                 </div>
             </div>
@@ -385,19 +379,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <h2 class="card-title text-primary font-weight-bold">Popular Questions</h2>
                     </div>
                     <div class="card-body">
+                        @foreach ($popularQuestions as $popularQuestion)
                         <div class="post">
-                            <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="/assets/dist/img/user.png" alt="user image">
-                                <span class="username">
-                                    <a href="#">user name</a>
-                              </span>
-                                <span class="description">Shared date</span>
-                            </div>
+
                             <!-- /.user-block -->
-                            <p>
-                                Question one
-                            </p>
+                            @php
+                                   echo $popularQuestion->statement
+                            @endphp
+
                         </div>
+                        @endforeach
+
                     </div>
                 </div>
                 <!--                    End of popular Question Card-->

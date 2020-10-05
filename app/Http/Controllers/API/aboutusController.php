@@ -16,6 +16,9 @@ class aboutusController extends Controller
     {
         //
         return view('about');
+
+        return view('about_us');
+
     }
 
     /**

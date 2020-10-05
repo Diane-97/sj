@@ -34,8 +34,8 @@ class QuestionController extends Controller
         ->orderBy('occurrences','DESC')
         ->limit(10)
         ->get();
-        
-        return view('welcomedemo',compact('questions','users','answers','countAswer','popularQuestions'))
+
+        return view('welcome',compact('questions','users','answers','countAswer','popularQuestions'))
 
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -50,7 +50,7 @@ class QuestionController extends Controller
     public function store(Request $request)
     { $request->validate([
         'statement' => 'required',
-       
+
     ]);
 
     $question = new Question;
@@ -59,8 +59,8 @@ class QuestionController extends Controller
     $question->save();
     return redirect()->route('questions.index')
                         ->with('success','Product created successfully.');
-   
-                    
+
+
     }
 
     /**
@@ -71,7 +71,7 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-     //   
+     //
     }
 
     /**

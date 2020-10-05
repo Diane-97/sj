@@ -32,8 +32,8 @@ class contactusController extends Controller
             'name'=>'required|string|max:50',
             'subject'=>'required|string|max:50',
             'email'=>'required|email|max:30',
-            'message'=>'required|string|max:255',
-            'address'=>'required|string|max:50'
+            'message'=>'required|string|max:255'
+            // 'address'=>'required|string|max:50'
         ]);
 
         $contact = ContactUs::save($request->all());
