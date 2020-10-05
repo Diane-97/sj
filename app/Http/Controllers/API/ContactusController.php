@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Contactus;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class contactusController extends Controller
+class ContactusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,6 +14,16 @@ class contactusController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+        return view('contact_us');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
         //
     }
@@ -25,7 +36,20 @@ class contactusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+          'name'=>'required|string|max:50',
+            'email'=>'required|string|max:50',
+            'subject'=>'required|string|max:50',
+            'message'=>'required|string|max:300',
+
+        ]);
+        Contactus::create([
+            'name'=>$request->name,
+            'email'=>strtolower($request->email),
+            'subject'=>$request->subject,
+            'message'=>$request->message,
+        ]);
+        return redirect('contact');
     }
 
     /**
@@ -35,6 +59,17 @@ class contactusController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }
