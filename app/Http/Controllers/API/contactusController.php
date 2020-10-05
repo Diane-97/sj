@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\ContactUs;
 
 class contactusController extends Controller
 {
@@ -15,6 +16,7 @@ class contactusController extends Controller
     public function index()
     {
         //
+        return view('contactus');
     }
 
     /**
@@ -26,6 +28,16 @@ class contactusController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'name'=>'required|string|max:50',
+            'subject'=>'required|string|max:50',
+            'email'=>'required|email|max:30',
+            'message'=>'required|string|max:255',
+            'address'=>'required|string|max:50'
+        ]);
+
+        $contact = ContactUs::save($request->all());
+        return back()->with('success','done');
     }
 
     /**

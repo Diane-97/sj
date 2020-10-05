@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Question;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,19 @@ use Illuminate\Support\Facades\Route;
     return view('welcomedemo');
 });*/
 
+
+
 Route::resource('/',API\QuestionController::class);
 Route::resource('/questions',API\QuestionController::class);
 Route::resource('/answers',API\AnswerController::class);
-
+Route::resource('/profile',ProfileController::class);
 Auth::routes();
 
 Route::get('/home', 'API\QuestionController@index')->name('home');
+Route::resource('contactus', 'ContactUsController');
+Route::get('about', 'API\aboutusController@index')->name('about');
+Route::any('/search', 'API\QuestionController@search');
+
+Route::get('users',  ['as' => 'users.index', 'uses' => 'UserController@index']);
+Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
+Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);

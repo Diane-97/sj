@@ -13,13 +13,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <title>S&amp;J</title>
 	<script src="ckeditor/ckeditor.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body class="hold-transition layout-top-nav">
-<div class="wrapper">
+<div class="wrapper" id="app">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white sticky-top">
         <div class="container">
             <a href="#" class="navbar-brand">
                 <img src="assets/dist/img/logo.png" alt="SJ Logo" class="brand-image img-circle elevation-3"
@@ -38,23 +40,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">About Us</a>
+                        <a href="about" class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Contact Us</a>
+                        <a href="contactus" class="nav-link">Contact Us</a>
                     </li>
 
                 </ul>
 
                 <!-- SEARCH FORM -->
-                <form class="form-inline ml-0 ml-md-3">
+                <form class="form-inline ml-0 ml-md-3" action="{{ url('search') }}" method="POST" role="search">
                     <div class="input-group input-group-sm">
-                        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                   
+                        <input class="form-control form-control-navbar" name="q"  id="search" type="search" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-navbar" type="submit">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
+
                     </div>
                 </form>
             </div>
@@ -71,7 +75,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 
-                                <a  class="dropdown-item" href="#" class="btn btn-default btn-flat btn-sm">Profile</a>
+                                <a  class="dropdown-item" href="profile" class="btn btn-default btn-flat btn-sm">Profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
@@ -119,7 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
 
                         </div>
-                        <a class="btn btn-success btn-sm float-right mb-5" href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
+                        <a class="btn btn-success btn-sm float-right mb-5"  href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
 
                     </div>
                 </div>
@@ -177,7 +181,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!--            End of left Card-->
 
             <!--            Center Card-->
-            <div class="col-6">
+            <!-- <div id="searchresult"> </div> -->
+            <div class="col-6" id="recqn">
                 <div class="card">
                     <div class="card-header">
                         <h2 class="card-title text-primary font-weight-bold">Recent Questions</h2>
@@ -307,8 +312,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 <script src="/js/app.js"></script>
 <script src="/js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 
 <script>
+
+
+
+
+
+
+
+
+
+
+
 		var ckview = document.getElementById("ckview");
 		CKEDITOR.replace(ckview,{
 			language:'en-gb',

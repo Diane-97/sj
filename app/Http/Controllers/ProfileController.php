@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class aboutusController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,17 @@ class aboutusController extends Controller
     public function index()
     {
         //
-        return view('about');
+        return view('profile');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -41,6 +50,17 @@ class aboutusController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -50,6 +70,22 @@ class aboutusController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $user = User::findOrFail($id);
+        
+        $data = $request->validate([
+            'name' => 'sometimes',
+            'email' => 'sometimes|email|unique:users,email,'.$user->id,
+            'phone' => 'sometimes|phone|unique:users,phone,'.$user->id,
+            'password' => 'sometimes',
+            'photo' => 'sometimes',
+            'role' => 'sometimes',
+        ]);
+    
+        $user->password = bcrypt(request('password'));
+        $user->fill($data);
+        $user->save();
+        Flash::message('Your account has been updated!');
+        return back();
     }
 
     /**
