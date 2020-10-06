@@ -105,11 +105,11 @@ class QuestionController extends Controller
       
         if (count ( $questions ) > 0)
            // return view ( 'welcomedemo' )->withDetails ( $questions )->withQuery ( $q );
-            return view('welcomedemo',compact('questions'))
+            return view('welcome',compact('questions'))
 
             ->with('i', (request()->input('page', 1) - 1) * 5)->withQuery ( $q );
         }
-            return view ( 'welcomedemo' )->with( 'No Details found. Try to search again !' );
+            return view ( 'welcome' )->with( 'No Details found. Try to search again !' );
     }
    
     

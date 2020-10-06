@@ -5,7 +5,6 @@ namespace App\Http\Controllers\API;
 use App\Contactus;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\ContactUs;
 
 class ContactusController extends Controller
 {
@@ -38,19 +37,6 @@ class ContactusController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD:app/Http/Controllers/API/contactusController.php
-        //
-        $this->validate($request, [
-            'name'=>'required|string|max:50',
-            'subject'=>'required|string|max:50',
-            'email'=>'required|email|max:30',
-            'message'=>'required|string|max:255'
-            // 'address'=>'required|string|max:50'
-        ]);
-
-        $contact = ContactUs::save($request->all());
-        return back()->with('success','done');
-=======
         $this->validate($request,[
           'name'=>'required|string|max:50',
             'email'=>'required|string|max:50',
@@ -65,7 +51,6 @@ class ContactusController extends Controller
             'message'=>$request->message,
         ]);
         return redirect('contact');
->>>>>>> d3f2386b2ca19bb6de80547eb556b55782af5e02:app/Http/Controllers/API/ContactusController.php
     }
 
     /**

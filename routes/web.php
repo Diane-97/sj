@@ -28,13 +28,11 @@ Auth::routes();
 
 Route::get('/home', 'API\QuestionController@index')->name('home');
 
-Route::resource('contactus', 'ContactUsController');
-Route::get('about', 'API\aboutusController@index')->name('about');
 Route::any('/search', 'API\QuestionController@search');
 
 Route::resource('profile', 'UserController');
 Route::get('profile', 'UserController@index')->name('profile');
-Route::patch('profileupdate/{id}', 'UserController@update')->name('profile');
+Route::resource('/profileupdate',UserController::class);
 
 //Route::get('users',  ['as' => 'users.index', 'uses' => 'UserController@index']);
 //Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
