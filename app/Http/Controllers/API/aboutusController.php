@@ -14,11 +14,7 @@ class aboutusController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        return view('layouts/about');
-=======
         return view('about_us');
->>>>>>> ea8f8499002da62e4952a395b8bd48431f406bf5
     }
 
     /**
