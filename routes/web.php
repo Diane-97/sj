@@ -39,3 +39,4 @@ Route::resource('/profileupdate',UserController::class);
 //Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
 Route::get('about','API\aboutusController@index')->name('about');
 Route::resource('contact','API\ContactusController');
+
