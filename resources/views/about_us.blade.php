@@ -138,7 +138,7 @@
                          <a href="" class="nav-link">About Us</a>
                      </li> -->
                     <li class="nav-item">
-                        <a href="/contact" class="nav-link">Contact Us</a>
+                        <a href="{{route('contact.index')}}" class="nav-link">Contact Us</a>
                     </li>
 
                 </ul>

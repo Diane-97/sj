@@ -97,5 +97,20 @@ class QuestionController extends Controller
         //
     }
 
+    public function search()
+    {
+        $q = Input::get ( 'q' );
+        if($q != ""){
+        $questions = Question::where ( 'statement', 'LIKE', '%' . $q . '%' )->with('i', (request()->input('page', 1) - 1) * 5);
+      
+        if (count ( $questions ) > 0)
+           // return view ( 'welcomedemo' )->withDetails ( $questions )->withQuery ( $q );
+            return view('welcome',compact('questions'))
 
+            ->with('i', (request()->input('page', 1) - 1) * 5)->withQuery ( $q );
+        }
+            return view ( 'welcome' )->with( 'No Details found. Try to search again !' );
+    }
+   
+    
 }

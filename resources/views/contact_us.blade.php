@@ -54,6 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a  class="dropdown-item" href="#" class="btn btn-default btn-flat btn-sm">Profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
@@ -116,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <label for="email">Email address</label>
                                 <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required="">
                             </div>
-                            <label for=subject">subject</label>
+                            <label for="subject">subject</label>
                             <input type="text" class="form-control" id="subject" name="subject" aria-describedby="emailHelp" placeholder="Enter subject" minlength="3" required="">
                             <div class="form-group">
                                 <label for="message">Message</label>

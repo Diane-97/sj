@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Question;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,30 @@ use Illuminate\Support\Facades\Route;
     return view('welcomedemo');
 });*/
 
+
+
 Route::resource('/',API\QuestionController::class);
 Route::resource('/questions',API\QuestionController::class);
 Route::resource('/answers',API\AnswerController::class);
-
+Route::resource('/profile',ProfileController::class);
 Auth::routes();
 
 Route::get('/home', 'API\QuestionController@index')->name('home');
+<<<<<<< HEAD
 Route::get('/about', 'API\aboutusController@index')->name('about');
 Route::get('/search','API\QuestionController@search')->name('search');
+=======
+
+Route::any('/search', 'API\QuestionController@search');
+
+Route::resource('profile', 'UserController');
+Route::get('profile', 'UserController@index')->name('profile');
+Route::resource('/profileupdate',UserController::class);
+
+//Route::get('users',  ['as' => 'users.index', 'uses' => 'UserController@index']);
+//Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
+//Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
+>>>>>>> 96277c774d0322947736bf935f9a635c60f43ffb
 Route::get('about','API\aboutusController@index')->name('about');
 Route::resource('contact','API\ContactusController');
+
