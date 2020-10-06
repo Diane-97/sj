@@ -26,3 +26,4 @@ Auth::routes();
 Route::get('/home', 'API\QuestionController@index')->name('home');
 Route::get('about','API\aboutusController@index')->name('about');
 Route::resource('contact','API\ContactusController');
+

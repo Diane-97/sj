@@ -21,8 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a3dc6ff7-4450-4afe-a875-cc841487b10c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_05_084712_create_contactuses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_05_084712_create_contactuses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/answerTxarea.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/answerTxarea.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/viewanswerpage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/viewanswerpage.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +188,8 @@
       <workItem from="1601535418152" duration="8615000" />
       <workItem from="1601627671933" duration="301000" />
       <workItem from="1601880026340" duration="4834000" />
-      <workItem from="1601885071852" duration="11661000" />
+      <workItem from="1601885071852" duration="13493000" />
+      <workItem from="1601962626031" duration="3931000" />
     </task>
     <servers />
   </component>
@@ -201,6 +206,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

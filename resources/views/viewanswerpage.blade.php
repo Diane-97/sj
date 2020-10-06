@@ -67,6 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img src="/img/user.png" class="user-image img-sm" alt="User Image">
+                                {{ Auth::user()->name }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -276,10 +277,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
 
     </div>
-       <p>
-        <span data-toggle="tooltip" title="3 Number of answers" class="badge bg-success">{{$question->id}}</span>
+       <div>
        <span> <button class="btn btn-success btn-sm" type="submit" data-toggle="collapse" data-target="#<?php echo $id ?>" aria-expanded="false" aria-controls="<?php echo $id ?>"><i class="fas fa-reply pr-1"></i>answer question</button></span>
-        </p>
+        </div>
 
     <!-- End of modal body if user login -->
 
@@ -356,11 +356,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </div>
 </div>
 </div>
-<p>
-<span data-toggle="tooltip" title="3 Number of answers" class="badge bg-success">{{$question->id}}</span>
-
+<div>
 <span> <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#<?php echo $id ?>" aria-expanded="false" aria-controls="<?php echo $id ?>"><i class="fas fa-reply pr-1"></i>answer question</button></span>
-</p>
+</div>
      <!-- End of modal body if user login -->
         @endauth
     @endif
@@ -374,6 +372,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!--            Right Card-->
             <div class="col-sm-3">
+                {{--        Total number of users--}}
+
+                <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="fas fa-users"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text text-bold">USERS</span>
+                        <span class="info-box-number text-bold">{{ \App\User::all()->count() }}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+
+                {{--        Ending to count total number of users--}}
                 <div class="card">
                     <div class="card-header">
                         <h2 class="card-title text-primary font-weight-bold">Popular Questions</h2>
@@ -424,10 +435,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <footer class="main-footer">
         <!-- To the right -->
         <div class="float-right d-none d-sm-inline">
-            Swali &amp; Jibu System
+            <strong class="text-blue">Version 1.1.0</strong>
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2020<a href="#">Techshare Limited</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2020<a href="#"> Techshare Limited</a>.</strong> All rights reserved.
     </footer>
 </div>
 <!-- ./wrapper -->
