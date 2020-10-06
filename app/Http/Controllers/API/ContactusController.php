@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Contactus;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\ContactUs;
 
-class contactusController extends Controller
+class ContactusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +15,16 @@ class contactusController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+        return view('contact_us');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
         //
         return view('contactus');
@@ -27,6 +38,7 @@ class contactusController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD:app/Http/Controllers/API/contactusController.php
         //
         $this->validate($request, [
             'name'=>'required|string|max:50',
@@ -38,6 +50,22 @@ class contactusController extends Controller
 
         $contact = ContactUs::save($request->all());
         return back()->with('success','done');
+=======
+        $this->validate($request,[
+          'name'=>'required|string|max:50',
+            'email'=>'required|string|max:50',
+            'subject'=>'required|string|max:50',
+            'message'=>'required|string|max:300',
+
+        ]);
+        Contactus::create([
+            'name'=>$request->name,
+            'email'=>strtolower($request->email),
+            'subject'=>$request->subject,
+            'message'=>$request->message,
+        ]);
+        return redirect('contact');
+>>>>>>> d3f2386b2ca19bb6de80547eb556b55782af5e02:app/Http/Controllers/API/ContactusController.php
     }
 
     /**
@@ -47,6 +75,17 @@ class contactusController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }
