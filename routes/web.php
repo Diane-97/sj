@@ -32,7 +32,8 @@ Route::any('/search', 'API\QuestionController@search');
 
 Route::resource('profile', 'UserController');
 Route::get('profile', 'UserController@index')->name('profile');
-Route::resource('/profileupdate',UserController::class);
+//Route::resource('/profileupdate',UserController::class);
+Route::patch('/profileupdate', 'UserController@update');
 
 //Route::get('users',  ['as' => 'users.index', 'uses' => 'UserController@index']);
 //Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);

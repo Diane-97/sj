@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <h6 class="text-right">Edit Profile</h6>
                 </div>
                 @php $id=Auth::user()->id; @endphp
-                <form method="POST" action="{{ route('/profileupdate.update',<?php echo $id ?>) }}">
+                <form method="POST" action="{{ route('profileupdate.update', [$id=>Auth::user()->id]) }}">
                         @csrf
 
                         <div class="form-group row">
