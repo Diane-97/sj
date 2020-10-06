@@ -21,9 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3dc6ff7-4450-4afe-a875-cc841487b10c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/about_us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about_us.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/viewanswerpage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/viewanswerpage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +186,9 @@
       <workItem from="1601627671933" duration="301000" />
       <workItem from="1601880026340" duration="4834000" />
       <workItem from="1601885071852" duration="13493000" />
-      <workItem from="1601962626031" duration="5211000" />
+      <workItem from="1601962626031" duration="10885000" />
+      <workItem from="1602001623963" duration="597000" />
+      <workItem from="1602002875150" duration="3684000" />
     </task>
     <servers />
   </component>
@@ -209,10 +211,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="307" key="NewPhpFileDialog" timestamp="1601886919970">
+    <state x="517" y="307" key="NewPhpFileDialog" timestamp="1601971926849">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="517" y="307" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1601886919970" />
+    <state x="517" y="307" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1601971926849" />
     <state x="238" y="0" key="SettingsEditor" timestamp="1601884973906">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
