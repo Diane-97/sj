@@ -7,10 +7,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-
+    <link rel="shortcut icon" href="assets/dist/img/logo.png">
     <title>S&amp;J</title>
 	<script src="ckeditor/ckeditor.js"></script>
     <link rel="stylesheet" href="/css/app.css">
@@ -71,7 +72,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                <a  class="dropdown-item" href="#" class="btn btn-default btn-flat btn-sm">Profile</a>
+                                <a  class="dropdown-item" href="{{route('profile')}}" class="btn btn-default btn-flat btn-sm">My profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">

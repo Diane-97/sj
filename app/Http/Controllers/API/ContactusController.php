@@ -8,11 +8,7 @@ use Illuminate\Http\Request;
 
 class ContactusController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('contact_us');

@@ -6,9 +6,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+    <link rel="shortcut icon" href="assets/dist/img/logo.png">
     <title>S&amp;J</title>
 
     <link rel="stylesheet" href="/css/app.css">
@@ -49,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
                     @auth
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-bold text-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 

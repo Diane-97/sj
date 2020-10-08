@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class AnswerController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -31,15 +32,15 @@ class AnswerController extends Controller
     {
         $request->validate([
             'statement' => 'required',
-           
+
         ]);
-    
+
         $answer = new Answer;
         $answer->statement = request('statement');
         $answer->question_id = request('questionId');
         $answer->user_id = request('userId');
         $answer->save();
-       
+
         return redirect()->route('questions.index')
                             ->with('success','Product created successfully.');
     }
