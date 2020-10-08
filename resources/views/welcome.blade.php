@@ -94,11 +94,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     @endauth
                 </ul>
             @endif
-
-
-
-
-
         </div>
     </nav>
     <!-- /.navbar -->
@@ -108,19 +103,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="col-12" style="background:url('{{asset('img/bakd.jpeg')}}');">
                     <div class="call-action-wrap">
                         <div class="col-12">
-
                             <h1 class="font-weight-bold text-primary">SWALI &amp; JIBU SYSTEM</h1>
-
+                            <a class="btn btn-success float-right mb-5" href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
                             <div class="w-50 h-25">
-
                                 <p class="font-weight-normal font-weight-bold text-white" style="font-size:25px;">
                                     We want to connect the people who have knowledge to the people who need it, to bring together people with different perspectives so they can understand each other better, and to empower everyone to share their knowledge.
                                 </p>
                             </div>
-
                         </div>
-                        <a class="btn btn-success float-right mb-5" href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
-
                     </div>
                 </div>
 
