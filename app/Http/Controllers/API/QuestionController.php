@@ -91,5 +91,10 @@ class QuestionController extends Controller
         //
     }
 
+    public function search()
+    {
+
+    }
+
 
 }

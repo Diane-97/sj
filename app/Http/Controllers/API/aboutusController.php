@@ -14,7 +14,10 @@ class aboutusController extends Controller
      */
     public function index()
     {
+        //
+
         return view('about_us');
+
     }
 
     /**
