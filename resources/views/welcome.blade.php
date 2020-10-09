@@ -100,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </nav>
     <!-- /.navbar -->
     <div class="container-fluid">
-        <div class="discy-container the-main-container mt-0"  style="background:url('{{asset('img/bakd.jpeg')}}');">
+        <div class="discy-container the-main-container mt-0" style="background-color:#D1E5EB;">
             <div class="row">
                 <div class="col-12">
                     <div class="call-action-wrap">
@@ -110,7 +110,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="w-50 h-25">
 
-                                <p class="font-weight-normal font-weight-bold text-white mt-2" style="font-size:25px;">
+                                <p class="font-weight-normal font-weight-bold text-dark mt-2">
                                     We want to connect the people who have knowledge to the people who need it, to bring together people with different perspectives so they can understand each other better, and to empower everyone to share their knowledge.
                                 </p>
                             </div>
