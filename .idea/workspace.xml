@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3dc6ff7-4450-4afe-a875-cc841487b10c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/about_us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about_us.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/answerTxarea.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/answerTxarea.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/popup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/popup.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/viewanswerpage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/viewanswerpage.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
@@ -162,6 +164,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -186,7 +189,16 @@
       <workItem from="1601627671933" duration="301000" />
       <workItem from="1601880026340" duration="4834000" />
       <workItem from="1601885071852" duration="13493000" />
-      <workItem from="1601962626031" duration="5211000" />
+      <workItem from="1601962626031" duration="10885000" />
+      <workItem from="1602001623963" duration="597000" />
+      <workItem from="1602002875150" duration="11123000" />
+      <workItem from="1602050857091" duration="6545000" />
+      <workItem from="1602065298803" duration="3504000" />
+      <workItem from="1602104637156" duration="2296000" />
+      <workItem from="1602133951642" duration="10165000" />
+      <workItem from="1602237236264" duration="2912000" />
+      <workItem from="1602241394523" duration="300000" />
+      <workItem from="1602242623292" duration="2872000" />
     </task>
     <servers />
   </component>
@@ -209,17 +221,25 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="307" key="NewPhpFileDialog" timestamp="1601886919970">
+    <state x="413" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602139835047">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="517" y="307" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1601886919970" />
+    <state x="413" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1602139835047" />
+    <state x="413" y="138" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602062559329">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="413" y="138" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1602062559329" />
+    <state x="517" y="307" key="NewPhpFileDialog" timestamp="1602008754928">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="517" y="307" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1602008754928" />
     <state x="238" y="0" key="SettingsEditor" timestamp="1601884973906">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="238" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1601884973906" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1601898284880">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1602066761441">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1601898284880" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1602066761441" />
   </component>
 </project>

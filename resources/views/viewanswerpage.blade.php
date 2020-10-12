@@ -7,10 +7,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-
+    <link rel="shortcut icon" href="assets/dist/img/logo.png">
     <title>S&amp;J</title>
 	<script src="/ckeditor/ckeditor.js"></script>
     <link rel="stylesheet" href="/css/app.css">
@@ -65,13 +65,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     @auth
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img src="/img/user.png" class="user-image img-sm" alt="User Image">
+                                <img src="/img/user.png" class="user-image img-sm mr-1" alt="User Image">
                                 {{ Auth::user()->name }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                <a  class="dropdown-item" href="#" class="btn btn-default btn-flat btn-sm">Profile</a>
+                                <a  class="dropdown-item" href="{{route('profile')}}" class="btn btn-default btn-flat btn-sm">My profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
@@ -103,23 +103,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </nav>
     <!-- /.navbar -->
     <div class="container-fluid">
-        <div class="discy-container the-main-container">
+        <div class="discy-container the-main-container" style="background-color:#D1E5EB;">
             <div class="row" >
-                <div class="col-12" style="background:url('{{asset('img/bakd.jpeg')}}');">
+                <div class="col-12">
                     <div class="call-action-wrap">
                         <div class="col-12" >
 
-                            <h1 class="font-weight-bold text-primary">SWALI &amp; JIBU SYSTEM</h1>
+                            <h1 class="font-weight-bold text-primary mt-3">SWALI &amp; JIBU SYSTEM</h1>
 
                             <div class="w-50 h-25">
 
-                                <p class="font-weight-normal font-weight-bold text-white" style="font-size:25px;">
+                                <p class="font-weight-normal font-weight-bold text-dark mt-2">
                                     We want to connect the people who have knowledge to the people who need it, to bring together people with different perspectives so they can understand each other better, and to empower everyone to share their knowledge.
                                 </p>
                             </div>
 
                         </div>
-                        <a class="btn btn-success float-right mb-5" href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
+                        <a class="btn btn-success float-right mb-5 mr-2" href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
 
                     </div>
                 </div>
@@ -188,7 +188,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <h4>QUESTION:</h4>
                         <hr>
                         <div class="post">
-                            <div class="box-body" style="font-size:50px">
+                            <div class="box-body text-dark text-bold" style="font-size: 25px;">
                                 <?php echo $question->statement ?>
                                 @php
                                  //get questin-id
@@ -289,67 +289,70 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="modal-dialog modal-dialog-centered">
 <div class="modal-content">
     <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">please login </h5>
+    <h5 class="modal-title text-blue text-bold" id="exampleModalLabel">Sign in to start your session</h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
     </div>
     <div class="modal-body">
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-            <div class="form-group row">
-                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                <div class="col-md-6">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                <div class="col-md-6">
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                    @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-md-6 offset-md-4">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                        <label class="form-check-label" for="remember">
-                            {{ __('Remember Me') }}
-                        </label>
+        <div class="card-body login-card-body">
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="input-group mb-3">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
+                    <div class="input-group-append">
+                        <div class="input-group-text text-blue">
+                            <span class="fas fa-envelope"></span>
+                        </div>
                     </div>
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                 </div>
-            </div>
-
-            <div class="form-group row mb-0">
-                <div class="col-md-8 offset-md-4">
-                    <button type="submit" class="btn btn-primary">
-                        {{ __('Login') }}
-                    </button>
-
-                    @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                            {{ __('Forgot Your Password?') }}
-                        </a>
-                    @endif
+                <div class="input-group mb-3">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+                    <div class="input-group-append">
+                        <div class="input-group-text text-blue">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                 </div>
-            </div>
-        </form>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="form-check">
+                            <input class="form-check-input primary" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                            <label class="form-check-label" for="remember">
+                                {{ __('Remember Me') }}
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-sm">{{ __('Login') }}</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            <p class="mb-1">
+                @if (Route::has('password.request'))
+                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                        {{ __('Forgot Your Password?') }}
+                    </a>
+                @endif
+            </p>
+            <p class="mb-0">
+                <a href="{{route('register')}}" class="text-center">Register new membership</a>
+            </p>
+        </div>
 
     </div>
 </div>

@@ -7,10 +7,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-
+    <link rel="shortcut icon" href="assets/dist/img/logo.png">
     <title>S&amp;J</title>
 	<script src="ckeditor/ckeditor.js"></script>
     <link rel="stylesheet" href="/css/app.css">
@@ -46,9 +47,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </ul>
 
                 <!-- SEARCH FORM -->
-                <form class="form-inline ml-0 ml-md-3">
+            <form class="form-inline ml-0 ml-md-3" action="{{url('search')}}">
                     <div class="input-group input-group-sm">
-                        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control form-control-navbar" name="search" type="search" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-navbar" type="submit">
                                 <i class="fas fa-search"></i>
@@ -65,13 +66,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     @auth
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img src="img/user.png" class="user-image img-sm" alt="User Image">
+                                <img src="img/user.png" class="user-image img-sm mr-1" alt="User Image">
                                 {{ Auth::user()->name }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a  class="dropdown-item" href="{{route('profile')}}" class="btn btn-default btn-flat btn-sm">My profile</a>
 
-                                <a  class="dropdown-item" href="{{route('profile')}}" class="btn btn-default btn-flat btn-sm">Profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
@@ -98,19 +99,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </nav>
     <!-- /.navbar -->
     <div class="container-fluid">
-        <div class="discy-container the-main-container">
+        <div class="discy-container the-main-container mt-0" style="background-color:#D1E5EB;">
             <div class="row">
-                <div class="col-12" style="background:url('{{asset('img/bakd.jpeg')}}');">
+                <div class="col-12">
                     <div class="call-action-wrap">
                         <div class="col-12">
-                            <h1 class="font-weight-bold text-primary">SWALI &amp; JIBU SYSTEM</h1>
-                            <a class="btn btn-success float-right mb-5" href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
+
+                            <h1 class="font-weight-bold text-primary mt-3">SWALI &amp; JIBU SYSTEM</h1>
+
                             <div class="w-50 h-25">
-                                <p class="font-weight-normal font-weight-bold text-white" style="font-size:25px;">
+
+                                <p class="font-weight-normal font-weight-bold text-dark mt-2">
                                     We want to connect the people who have knowledge to the people who need it, to bring together people with different perspectives so they can understand each other better, and to empower everyone to share their knowledge.
                                 </p>
                             </div>
                         </div>
+                        <a class="btn btn-success float-right mb-5 mr-2" href="{{ route('register') }}"><i class="fas fa-plus pr-1"></i>Create A New Account</a>
+
                     </div>
                 </div>
 

@@ -6,9 +6,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+    <link rel="shortcut icon" href="assets/dist/img/logo.png">
     <title>S&amp;J</title>
 
     <link rel="stylesheet" href="/css/app.css">
@@ -49,12 +50,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
                     @auth
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-bold text-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="img/user.png" class="user-image img-sm mr-1" alt="User Image">
                                 {{ Auth::user()->name }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a  class="dropdown-item" href="#" class="btn btn-default btn-flat btn-sm">Profile</a>
+                            <a  class="dropdown-item" href="{{route('profile')}}" class="btn btn-default btn-flat btn-sm">My profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">

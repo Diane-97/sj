@@ -151,13 +151,13 @@
                 <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
                     @auth
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-bold text-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img src="img/user.png" class="user-image img-sm" alt="User Image">
                                 {{ Auth::user()->name }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a  class="dropdown-item" href="#" class="btn btn-default btn-flat btn-sm">Profile</a>
+                                <a  class="dropdown-item" href="{{route('profile')}}" class="btn btn-default btn-flat btn-sm">My profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
@@ -200,7 +200,7 @@
                                     </figure>				</header>
 
                                 <div class="post-wrap-content">
-                                    <div class="post-content-text">
+                                    <div class="post-content-text text-dark">
                                         <h3>Why S&amp;J Exists</h3>
                                         <p><strong>S&amp;J</strong> started when we thought to let people to share and learn new stuff and to increase worlds knowledge every day. These days valuable knowledge is only available in people minds or known to only some people. In the past when there is no technology people used to form groups and used to discuss and discovers new things.</p>
                                         <p>We want to create those days again. Here we connect people who need the knowledge to the people who have it. Bringing two different perspectives people together can inspire anyone to share their knowledge.</p>

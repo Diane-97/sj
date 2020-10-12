@@ -12,12 +12,6 @@ use Illuminate\Support\Facades\DB;
 
 class QuestionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
 
     public function index()
     {
@@ -97,20 +91,35 @@ class QuestionController extends Controller
         //
     }
 
-    public function search()
+    /**
+     * search statement.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
     {
-        $q = Input::get ( 'q' );
-        if($q != ""){
-        $questions = Question::where ( 'statement', 'LIKE', '%' . $q . '%' )->with('i', (request()->input('page', 1) - 1) * 5);
-      
-        if (count ( $questions ) > 0)
-           // return view ( 'welcomedemo' )->withDetails ( $questions )->withQuery ( $q );
-            return view('welcome',compact('questions'))
+        $request->validate([
+            'search' => 'required',
+        ]);
+        $search = request('search');
+        $users = User::first();
+        $questions = Question::where('statement', 'LIKE', "%$search%")->paginate(5);
+        $answers = Answer::all();
+        $question = Question::all();
+        $answer = DB::select('select * from answers where question_id = ?',[2]);
+        $countAswer = count($answer);
+        $popularQuestions = DB::table('questions')
+        ->select('statement',DB::raw('COUNT(statement) AS occurrences'))
+        ->groupBy('statement')
+        ->orderBy('occurrences','DESC')
+        ->limit(5)
+        ->get();
+        return view('welcome',compact('questions','users','answers','countAswer','popularQuestions'))
 
-            ->with('i', (request()->input('page', 1) - 1) * 5)->withQuery ( $q );
-        }
-            return view ( 'welcome' )->with( 'No Details found. Try to search again !' );
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+
     }
-   
-    
+
+
 }
