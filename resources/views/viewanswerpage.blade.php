@@ -114,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="w-50 h-25">
 
                                 <p class="font-weight-normal font-weight-bold text-dark mt-2">
-                                    We want to connect the people who have knowledge to the people who need it, to bring together people with different perspectives so they can understand each other better, and to empower everyone to share their knowledge.
+                                We want to connect the people who have knowledge to let people to share and learn new stuff and to increase worlds knowledge every day.
                                 </p>
                             </div>
 
